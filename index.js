@@ -85,8 +85,13 @@ dropDown.addEventListener("change", ()=> {
 
 // Gold add more messages using form
 let newMessage = false;
+let form = document.message;
+console.log(form)
 
-function postMessage() {
+form.addEventListener("submit", function(event){
+    event.preventDefault()
+
+    
     if ( newMessage === false && dropDown.value === "theme-one") {
         newMessage = true;
         let newDiv = document.createElement('div');
@@ -118,9 +123,11 @@ function postMessage() {
         messageArr.push(newDiv);
     }
     input.value = "";
-}
+
+})
+
+
 
  
-
 
 
